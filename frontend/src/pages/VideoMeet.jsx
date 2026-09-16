@@ -566,6 +566,7 @@ import MicOffIcon from '@mui/icons-material/MicOff'
 import ScreenShareIcon from '@mui/icons-material/ScreenShare';
 import StopScreenShareIcon from '@mui/icons-material/StopScreenShare'
 import ChatIcon from '@mui/icons-material/Chat'
+import CloseIcon from '@mui/icons-material/Close'
 import server from '../environment';
 
 const server_url = server;
@@ -595,7 +596,7 @@ export default function VideoMeetComponent() {
 
     let [screen, setScreen] = useState();
 
-    let [showModal, setModal] = useState(true);
+    let [showModal, setModal] = useState(false);
 
     let [screenAvailable, setScreenAvailable] = useState();
 
@@ -603,7 +604,7 @@ export default function VideoMeetComponent() {
 
     let [message, setMessage] = useState("");
 
-    let [newMessages, setNewMessages] = useState(3);
+    let [newMessages, setNewMessages] = useState(0);
 
     let [askForUsername, setAskForUsername] = useState(true);
 
@@ -1046,7 +1047,12 @@ export default function VideoMeetComponent() {
                     {showModal ? <div className={styles.chatRoom}>
 
                         <div className={styles.chatContainer}>
-                            <h1>Chat</h1>
+                            <div className={styles.chatHeader}>
+                                <h1>Chat</h1>
+                                <IconButton onClick={closeChat} sx={{ color: '#9AA1BE' }}>
+                                    <CloseIcon />
+                                </IconButton>
+                            </div>
 
                             <div className={styles.chattingDisplay}>
 
@@ -1114,7 +1120,10 @@ export default function VideoMeetComponent() {
                             max={999}
                             sx={{ '& .MuiBadge-badge': { backgroundColor: '#FF9839', color: '#0A0D1C' } }}
                         >
-                            <IconButton onClick={() => setModal(!showModal)} style={{ color: "white" }}>
+                            <IconButton onClick={() => {
+                                if (!showModal) setNewMessages(0);
+                                setModal(!showModal);
+                            }} style={{ color: "white" }}>
                                 <ChatIcon />
                             </IconButton>
                         </Badge>

@@ -201,6 +201,18 @@
     flex-direction: column;
 }
 
+.chatHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.chatHeader h1 {
+    border-bottom: none;
+    padding-block: 0;
+}
+
 .chatContainer h1 {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.3rem;
@@ -208,7 +220,6 @@
     color: #F3F1EB;
     padding-block: 1rem;
     margin: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .chattingDisplay {
@@ -260,5 +271,6 @@
     .chatRoom {
         width: 100%;
         max-width: 100%;
+        height: calc(100vh - 76px);
     }
 }
