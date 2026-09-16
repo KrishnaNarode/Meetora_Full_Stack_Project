@@ -1,4 +1,4 @@
-.meetVideoContainer {
+/* .meetVideoContainer {
     position: relative;
     height: 100vh;
     background: rgb(1, 4, 48);
@@ -58,4 +58,207 @@
 .chattingArea {
     position: absolute;
     bottom: 0;
+} */
+
+.lobbyContainer {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(ellipse 70% 50% at 85% 15%, rgba(108, 92, 231, 0.14), transparent 60%),
+        #0A0D1C;
+    font-family: 'Inter', sans-serif;
+    color: #F3F1EB;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.lobbyCard {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
+}
+
+.lobbyCard h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+}
+
+.lobbyPreview {
+    margin-top: 1.8rem;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+}
+
+.lobbyPreview video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    transform: scaleX(-1);
+}
+
+.meetVideoContainer {
+    position: relative;
+    height: 100vh;
+    background: #0A0D1C;
+    overflow: hidden;
+}
+
+.meetUserVideo {
+    position: absolute;
+    bottom: 12vh;
+    height: 20vh;
+    width: auto;
+    left: 16px;
+    border-radius: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transform: scaleX(-1);
+    z-index: 5;
+}
+
+.buttonContainers {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding-block: 1rem;
+    background: linear-gradient(0deg, rgba(0,0,0,0.6), transparent);
+    z-index: 6;
+}
+
+.buttonContainers svg {
+    font-size: 1.8rem;
+}
+
+.buttonContainers button {
+    background: rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(6px);
+}
+
+.buttonContainers button:hover {
+    background: rgba(255, 255, 255, 0.16) !important;
+}
+
+.conferenceView {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    padding: 16px;
+    gap: 12px;
+    box-sizing: border-box;
+}
+
+.conferenceView > div {
+    flex: 1 1 400px;
+    height: 100%;
+    max-width: 100%;
+    display: flex;
+}
+
+.conferenceView video {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: #000;
+    object-fit: cover;
+}
+
+.chatRoom {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background: #12162A;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    width: 340px;
+    max-width: 85vw;
+    padding-inline: 1.2rem;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.chatContainer {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatContainer h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #F3F1EB;
+    padding-block: 1rem;
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.chattingDisplay {
+    flex: 1;
+    overflow-y: auto;
+    padding-block: 1rem;
+    color: #F3F1EB;
+}
+
+.chattingDisplay p {
+    margin: 0.2rem 0;
+}
+
+.chattingArea {
+    position: absolute;
+    bottom: 1rem;
+    left: 1.2rem;
+    right: 1.2rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.chattingArea > div:first-child {
+    flex: 1;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .lobbyCard {
+        padding: 1.8rem;
+    }
+
+    .meetUserVideo {
+        height: 15vh;
+        left: 8px;
+        bottom: 14vh;
+    }
+
+    .buttonContainers svg {
+        font-size: 1.5rem;
+    }
+
+    .conferenceView video {
+        width: 90vw;
+        min-width: unset;
+    }
+
+    .chatRoom {
+        width: 100%;
+        max-width: 100%;
+    }
 }
